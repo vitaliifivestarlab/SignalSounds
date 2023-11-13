@@ -1,0 +1,242 @@
+// PASTE CUSTOM STYLING HERE
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Space+Mono:wght@400;700&display=swap');
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Space Mono', monospace;
+}
+h1,h2,h2,h4,h5,h6{
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Space Mono', monospace;
+}
+
+div[data-content-region="header_top--global"] + header{
+   // margin-top:0 !important;
+    //padding-top:0;
+}
+
+.container, header div#menu, .logo-user-section.container {
+   max-width: 1240px;
+}
+
+.newsletter .form-prefixPostfix{
+   flex-wrap:no-wrap;
+}
+
+.newsletter .form-prefixPostfix .button{
+   padding: .85714rem 1rem;
+   margin:0;
+}
+
+h5.footer-info-heading{
+    font-weight:400;
+    font-size:16px;
+}
+
+// custom
+
+div.card-img-container img {
+    margin-top: 10px;
+}
+
+div.card-img-container::after {
+    padding-bottom: 100%;    
+}
+
+h2.page-heading.showcase-products {
+    color: #00f;
+    font-family: "Space Mono",monospace;
+    font-weight: 300;
+}
+
+img.card-image {
+    border: 1px solid #ededed !important;
+    margin-bottom: 0;
+    &:hover {
+        border: 1px solid #00f !important;
+    }
+}
+
+p.card-text {
+    display: none;
+}
+
+h4.card-title a {
+    font-weight: 400;
+    font-family: "Space Mono",monospace;
+    color: #333;
+    text-transform: uppercase;
+}
+
+span.price.price--withTax {
+    font-weight: 500;
+    font-family: "Space Mono",monospace;
+    color: #00f;
+    font-size: 1rem;
+}
+
+div.form-field input {
+    border: 1px solid #ededed !important;
+    padding: 5px;
+    padding-left: 5px;
+}
+
+dl.productView-info {
+    display: none;
+}
+
+div.form-action input {
+    border-radius: 0 !important;
+    font-family: "Space Mono",monospace;
+}
+
+form.form.form-wishlist.form-action a {
+    font-family: "Space Mono",monospace;
+}
+
+div.form-increment input {
+    font-family: 'Work Sans',sans-serif,'Work Sans',sans-serif;
+}
+
+div.page-content.page-content--left h2 {
+    font-size: 2.4375rem;
+    font-weight: 300;
+}
+
+div.page-content.page-content--left p a {
+    font-weight: 600;
+    text-decoration: none !important;
+}
+
+div.blog-container article.blog.noImage {
+    border: 1px solid #eee;
+    width: 30% !important;
+}
+
+h2.blog-title a {
+    color: #00f !important;
+    font-size: 1.75rem;
+}
+
+div.blog-container {
+    gap: 15px;
+}
+
+a.read-more {
+    background-color: #00f;
+    color: #fff !important;
+    text-align: center;
+    text-decoration: none;
+}
+
+div.card-figcaption-body a {
+    @media only screen and (min-width: 800px) {
+        display: block !important;
+        z-index: 999;
+    }
+}
+
+input.button.button--primary.form-prefixPostfix-button--postfix {
+    font-family: "Space Mono",monospace;
+    font-weight: 300;
+}
+
+form div.form-actions {
+    text-align: left;
+}
+
+div.form-actions input.button.button--primary {
+    font-family: "Space Mono",monospace;
+    font-weight: 300;
+}
+
+main.page div.page-content.page-content--centered {
+    margin-left: 0 !important;
+    width: 50% !important;
+}
+
+div.page-content.page-content--centered form div.form-row.form-row--half {
+    display: flex;
+    flex-direction: column;
+}
+
+div.form-row.form-row--half div.form-field {
+    width: 100% !important;
+}
+
+div.form-field input.form-input {
+    border: 1px solid #bdbddb !important;
+}
+
+div.form-field textarea.form-input {
+    border: 1px solid #bdbddb !important;
+    resize: vertical;
+}
+
+div.form-field label.form-label {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: "Space Mono",monospace;
+}
+
+div[data-currency-code="GBP"] {
+    margin-bottom: 0;
+}
+
+div.cart-actions a.button.button--primary {
+    font-family: "Space Mono",monospace;
+    font-weight: 300;
+}
+
+div.previewCartAction {
+    display: flex;
+    flex-direction: column;
+    /* overflow: hidden; */
+    gap: 5px;
+}
+
+div.previewCartAction div.previewCartAction-checkout {
+    padding: 0;
+    width: 100%;
+    font-weight: 300;
+}
+
+div.previewCartAction div.previewCartAction-viewCart {
+    padding: 0;
+    width: 100%;
+    font-weight: 300;
+}
+
+div.previewCartAction div.previewCartAction-viewCart a, div.previewCartAction-checkout a {
+    font-family: "Space Mono",monospace;
+}
+
+section.account-content div.alertBox.alertBox--info {
+    border: 1px solid #000 !important;
+}
+
+div.form-actions button.button.button--primary{
+    font-family: "Space Mono",monospace;
+    font-weight: 300;
+}
+
+div.layout-main {
+    font-family: "Space Mono",monospace;
+}
+
+div.stepHeader-figure.stepHeader-column h2 {
+    font-family: "Space Mono",monospace;
+}
+
+div.customerView-body.optimizedCheckout-contentPrimary {
+    font-family: "Space Mono",monospace;
+}
+
+div.customerView-actions button.button.button--tertiarybutton--tiny.optimizedCheckout-buttonSecondary {
+    border-radius: 0;
+    font-family: "Space Mono",monospace;
+    color: #fff;
+    font-weight: 300;
+    background-color: #00f;
+}
