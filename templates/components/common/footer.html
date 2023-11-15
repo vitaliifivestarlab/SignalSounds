@@ -33,8 +33,36 @@
 <footer class="footer" role="contentinfo">
     <div class="container">
         <section class="footer-info">
+
+          <article class="footer-info-col footer-info-col--small-4 categories" data-section-type="footer-categories">
+            <h5 class="footer-info-heading">BRANDS & CATEGORIES</h5>
+            <ul class="footer-info-list categories">
+                {{#each categories}}
+                    <li>
+                        <a href="{{url}}">{{name}}</a>
+                    </li>
+                {{/each}}
+                <div class="footer-categories-pagination">
+                  <a class="navPages-action paginator previous arrow">
+                    <i class="icon prev" aria-hidden="true">
+                      <svg><use xlink:href="#icon-chevron-left" /></svg>
+                    </i>
+                    <span class="pagination-label">prev</span>
+                  </a>
+                  <span class="dots"></span>
+                  <a class="navPages-action paginator next arrow">
+                    <span class="pagination-label">next</span>
+                    <i class="icon next" aria-hidden="true">
+                      <svg><use xlink:href="#icon-chevron-left" /></svg>
+                    </i>
+                  </a>
+                </div>
+            </ul>
+        </article>
+
+
             <article class="footer-info-col footer-info-col--small-4" data-section-type="footer-webPages">
-                <h5 class="footer-info-heading">{{lang 'footer.navigate'}}</h5>
+                <h5 class="footer-info-heading">Company</h5>
                 <ul class="footer-info-list">
                     {{#each pages}}
                         <li>
@@ -58,33 +86,29 @@
                 </ul>
             </article>
 
-            <article class="footer-info-col footer-info-col--small-4 categories" data-section-type="footer-categories">
-                <h5 class="footer-info-heading">{{lang 'footer.categories'}}</h5>
-                <ul class="footer-info-list categories">
-                    {{#each categories}}
-                        <li>
-                            <a href="{{url}}">{{name}}</a>
-                        </li>
-                    {{/each}}
-                    <div class="footer-categories-pagination">
-                      <a class="navPages-action paginator previous arrow">
-                        <i class="icon prev" aria-hidden="true">
-                          <svg><use xlink:href="#icon-chevron-left" /></svg>
-                        </i>
-                        <span class="pagination-label">prev</span>
-                      </a>
-                      <span class="dots"></span>
-                      <a class="navPages-action paginator next arrow">
-                        <span class="pagination-label">next</span>
-                        <i class="icon next" aria-hidden="true">
-                          <svg><use xlink:href="#icon-chevron-left" /></svg>
-                        </i>
-                      </a>
-                    </div>
-                </ul>
+         
+
+            <article class="footer-info-col footer-info-col--small-4" data-section-type="footer-webPages">
+              <h5 class="footer-info-heading">SOCIAL</h5>
+                {{> components/common/social-links}}
+                <ul class="footer-info-list">
+                <li>
+                  <a href="https://www.facebook.com/signalsoundsuk/">FACEBOOK</a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/signalsounds">TWITTER</a>
+
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/signal_sounds/">INSTAGRAM</a>
+
+                </li>
+              </ul>
+                {{{region name="ssl_site_seal--global"}}}
             </article>
 
-            {{#and theme_settings.shop_by_brand_show_footer shop_by_brand.length}}
+
+            <!-- {{#and theme_settings.shop_by_brand_show_footer shop_by_brand.length}}
             <article class="footer-info-col footer-info-col--small-4" data-section-type="footer-brands">
                 <h5 class="footer-info-heading">{{lang 'footer.brands'}}</h5>
                 <ul class="footer-info-list">
@@ -96,21 +120,21 @@
                     <li><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>
                 </ul>
             </article>
-            {{/and}}
+            {{/and}} -->
             
             
-            {{#if theme_settings.show_social_icons '===' true}}
+            <!-- {{#if theme_settings.show_social_icons '===' true}}
               <article class="footer-info-col footer-info-col--small-4" data-section-type="footer-webPages">
-                <h5 class="footer-info-heading">{{lang 'social.connect'}}</h5>
+                <h5 class="footer-info-heading">SOCIAL</h5>
                   {{> components/common/social-links}}
-                  {{#if settings.phone_number}}
-                    <!-- <li class="navPages-item navPages-item-page pages phone-number"> -->
-                      <a class="navPages-action phone-number">{{settings.phone_number}}</a>
-                    <!-- </li> -->
-                  {{/if}}
+                  <li>
+                    <a href="https://www.facebook.com/signalsoundsuk/">FACEBOOK</a>
+                    <a href="https://www.instagram.com/signal_sounds/">INSTAGRAM</a>
+                    <a href="https://twitter.com/signalsounds">TWITTER</a>
+                </li>
                   {{{region name="ssl_site_seal--global"}}}
               </article>
-            {{/if}}
+            {{/if}} -->
             
             <article class="footer-info-col footer-info-col--small-4 newsletter cta" data-section-type="newsletterSubscription">
                 <h5 class="footer-info-heading">Newsletter</h5>
@@ -145,7 +169,7 @@
 
       {{#if theme_settings.show_copyright_footer}}
         <div class="footer-copyright">
-            <p class="powered-by text">&copy; {{moment format="YYYY"}} {{settings.store_name}} </p>
+            <p class="powered-by text">&copy; {{moment format="YYYY"}} www.signalsounds.com. All Rights Reserved.</p>
         </div>
       {{/if}}
     </div> <!-- footer-bottom -->
@@ -1546,5 +1570,67 @@ window.addEventListener("resize", function() {
 <script type="text/javascript">
   $(document).ready(function(){
     $('.flyout.page.eight-per-page:first-child:last-child').parents('.desktop').siblings('.category-title').find('.flyout-pagination-container.top.visible').removeClass('visible');
+  
+      var productMediaSlider = new Swiper(".productMedia-slider", {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  speed: 600,
+  loop: true,
+  navigation: {
+    nextEl: ".productMedia-slider .swiper-button-next",
+    prevEl: ".productMedia-slider .swiper-button-prev",
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+    },
+  },
+});
+
+      
+      
   });
+  
+  // DYNAMICALLY HEIGHT FOR TAB
+
+$( document ).ready(function() {
+   const heightMin = $('#product-tab').innerHeight();
+$('.tabs').height(heightMin);
+});
+
+
+  function updateHeight() {
+         var contentHeight = $('.tab-switch:checked+.tab-content').innerHeight();
+        $('.tabs').height(contentHeight);
+    }
+
+    // Call updateHeight on window resize
+    $(window).resize(function() {
+        updateHeight();
+    });
+    
+     $(".tab-label2").click(function() {
+        var contentHeight = $('#product-tab2').innerHeight();
+        $('.tabs').height(contentHeight);
+    }); 
+    
+        
+     $(".tab-label1").click(function() {
+        var contentHeight = $('#product-tab').innerHeight();
+        $('.tabs').height(contentHeight);
+    }); 
+
+
+
+    
+    
+if ($('div#add-to-cart-wrapper:visible').length == 0){
+     $(".stock.available").hide();
+} else {
+     $('.product.alert.stock').hide();
+    $(".stock.out-of-stock").hide();
+    $(".out-of-stock-wishlist").hide();
+}
+
+
 </script>

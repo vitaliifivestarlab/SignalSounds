@@ -1,66 +1,31 @@
-<div id="accordion">
+<div class="wrapper">
+  <div class="tabs">
+    <div class="tab">
   {{#if product.description}}
   {{#if theme_settings.show_product_overview_tab '===' true}}
-    <h3 class="product-description"><span class="tab-title">Product Overview</span> <svg class="accordion-icon arrow down"><use xlink:href="#icon-v-down"></use></svg></h3>
-      <div class="" id="">
+      <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+      <label for="tab-1" class="tab-label tab-label1">Product Overview</label>
+      <div class="tab-content" id="product-tab">
         {{{product.description}}}
-        {{{snippet 'product_description'}}}
       </div>
   {{/if}}
   {{/if}}
+  </div>
 
-  {{#if theme_settings.show_product_warranty_tab '===' true}}
-  {{#if product.warranty}}
-    <h3 class="product-warranty"><span class="tab-title">{{lang 'products.warranty'}}</span> <svg class="accordion-icon arrow down"><use xlink:href="#icon-v-down"></use></svg></h3>
-      <div class="" id="">
-        {{{product.warranty}}}
-      </div>
-  {{/if}}
-  {{/if}}
-
-  {{#if theme_settings.show_product_video_tab '===' true}}
-  {{#if product.videos}}
-    <h3 class="product-videos"><span class="tab-title">Product Videos</span> <svg class="accordion-icon arrow down"><use xlink:href="#icon-v-down"></use></svg></h3>
-    {{#if product.videos.list.length}}
-      <div class="" id="">
-        {{> components/products/videos product.videos}}
-      </div>
+    <div class="tab">
+      <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+      <label for="tab-2" class="tab-label tab-label2">Technical Spec</label>
+      <div class="tab-content" id="product-tab2">
+             {{#each product.custom_fields}}
+    {{#if name}}
+      {{#if name '===' 'Technical Spec'}}
+        {{{value}}}
+      {{/if}}
     {{/if}}
-  {{/if}}
-  {{/if}}
+  {{/each}} 
+            </div>
+        </div>
+    </div>
+  </div>
 
-  {{#if settings.show_product_rating}}
-  {{#if theme_settings.show_product_reviews_tab '===' true}}
-    <h3 class="product-reviews"><span class="tab-title">Reviews</span> <svg class="accordion-icon arrow down"><use xlink:href="#icon-v-down"></use></svg></h3>
-    <div class="productView-rating">
-              {{#if settings.show_product_rating}}
-                  {{> components/products/ratings rating=product.rating}}
-                  <span class="productView-reviewLink">
-                      {{#if product.num_reviews '>' 0}}
-                          <a href="{{product.url}}#product-reviews">
-                              {{lang 'products.reviews.link_to_review' total=product.num_reviews}}
-                          </a>
-                      {{else}}
-                          {{lang 'products.reviews.link_to_review' total=product.num_reviews}}
-                      {{/if}}
-                  </span>
-              {{/if}}
-              {{#if settings.show_product_reviews}}
-                  <span class="productView-reviewLink">
-                      <a href="{{product.url}}{{#if is_ajax}}#write_review{{/if}}"
-                         {{#unless is_ajax }}data-reveal-id="modal-review-form"{{/unless}}>
-                         {{lang 'products.reviews.new'}}
-                      </a>
-                  </span>
-
-              {{/if}}
-
-              {{#all settings.show_product_reviews (if theme_settings.show_product_reviews_tab '===' true)}}
-                {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
-              {{/all}}
-             </div>
-  {{/if}}
-  {{/if}}
-
-
-</div>
+  
